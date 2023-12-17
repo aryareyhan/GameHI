@@ -15,10 +15,12 @@ struct Game{
     let size: String
     let category: String
     let description: String
+    let ratingText: String
     
     // Images
     let logo: String
-    let rating: String
+    let bannerImage: String
+    let ratingImage: String
     let screenshot1: String
     let screenshot2: String
     let screenshot3: String

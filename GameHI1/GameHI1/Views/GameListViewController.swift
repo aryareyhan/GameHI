@@ -1,18 +1,18 @@
 //
-//  HomeViewController.swift
+//  GameListViewController.swift
 //  GameHI1
 //
-//  Created by Dierta Pasific on 17/12/23.
+//  Created by Dierta Pasific on 18/12/23.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class GameListViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var topGrossingTableView: UITableView!
-    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    var category: GameCategory!
     
-    var topGrossingGames: [Game] = [
+    var games: [Game] = [
         .init(name: "PUBG Mobile", price: "IDR 53.000", minimumAge: "17+", size: "2.68 GB", category: "Action" , description: "PUBG Mobile is a battle royale game where 100 players parachute onto an island, scavenge for weapons, and compete to be the last one standing. The game offers realistic graphics, a variety of weapons, and intense combat.", ratingText: "5.0", logo: "pubgLogo", bannerImage: "pubgBanner", ratingImage: "fiveRating", screenshot1: "pubg1", screenshot2: "pubg2", screenshot3: "pubg3"),
         .init(name: "Candy Crush Saga", price: "IDR 52.000", minimumAge: "4+", size: "322 MB", category: "Puzzle", description: "Candy Crush Saga is a wildly popular match-three puzzle game that has captivated millions of players worldwide. Swap colorful candies to create matches and achieve objectives across a variety of levels. With its easy-to-learn gameplay, vibrant graphics, and social features, Candy Crush Saga offers a sweet and addictive puzzle experience suitable for players of all ages.", ratingText: "5.0", logo: "candyCrushLogo", bannerImage: "candyCrushBanner", ratingImage: "fiveRating", screenshot1: "candyCrush1", screenshot2: "candyCrush2", screenshot3: "candyCrush3"),
         .init(name: "Real Racing 3", price: "IDR 81.000", minimumAge: "4+", size: "743 MB", category: "Racing", description: "Real Racing 3 is a top-tier racing simulation that brings realism to the mobile platform. Featuring an extensive selection of licensed cars and real tracks, the game immerses players in a dynamic racing experience. Its free-to-play model offers a comprehensive career mode, real-time multiplayer races, and visually stunning graphics. Real Racing 3 continues to be a benchmark for mobile racing games, combining authenticity with accessible gameplay.", ratingText: "5.0", logo: "realRacingLogo", bannerImage: "realRacingBanner", ratingImage: "fiveRating", screenshot1: "realRacing1", screenshot2: "realRacing2", screenshot3: "realRacing3"),
@@ -21,78 +21,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         .init(name: "Civilization VI", price: "IDR 58.000", minimumAge: "12+", size: "4.13 GB", category: "Strategy", description: "Civilization VI brings the beloved PC strategy game to mobile devices, allowing players to build and lead their own civilization from ancient times to the modern era. With complex systems for diplomacy, technology, culture, and warfare, Civilization VI offers a deep and immersive 4X strategy experience. The game challenges players to make strategic decisions, interact with historical leaders, and shape the course of their civilization's history on a global scale.", ratingText: "5.0", logo: "civilizationLogo", bannerImage: "civilizationBanner", ratingImage: "fiveRating", screenshot1: "civilization1", screenshot2: "civilization2", screenshot3: "civilization3")
     ]
     
-    var categories: [GameCategory] = [
-        .init(id: "id1", name: "All Games", image: "allCategory"),
-        .init(id: "id2", name: "Action", image: "actionCategory"),
-        .init(id: "id3", name: "Adventure", image: "adventureCategory"),
-        .init(id: "id4", name: "Strategy", image: "strategyCategory"),
-        .init(id: "id5", name: "Puzzle", image: "puzzleCategory"),
-        .init(id: "id6", name: "Racing", image: "racingCategory")
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "GameH1"
-        
-        categoryCollectionView.dataSource = self
-        categoryCollectionView.delegate = self
-        
-        topGrossingTableView.dataSource = self
-        topGrossingTableView.delegate = self
-        
-        registerCategoriesCells()
+
+        title = category.name
+        registerCells()
     }
     
-    private func registerCategoriesCells(){
-        categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+
+    private func registerCells(){
+        tableView.register(UINib(nibName: GameListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: GameListTableViewCell.identifier)
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topGrossingGames.count
-    }
-    
+}
+
+
+extension GameListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopGrossingTableViewCell", for: indexPath) as! TopGrossingTableViewCell
-        cell.setup(game: topGrossingGames[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        cell.setup(category: categories[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: GameListTableViewCell.identifier) as! GameListTableViewCell
+        cell.setup(game: games[indexPath.row])
         return cell
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == topGrossingTableView{
-            let controller = GameDetailViewController.instantiate()
-            controller.game = tableView == topGrossingTableView ? topGrossingGames[indexPath.row] : topGrossingGames[indexPath.row]
-            navigationController?.present( controller, animated: true, completion: nil)
-        } else{
-           // Error
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == categoryCollectionView{
-            let controller = ListGamesViewController.instantiate()
-            controller.category = categories[indexPath.row]
-            navigationController?.pushViewController(controller, animated: true)
-        } else{
-            let controller = GameDetailViewController.instantiate()
-            
-            navigationController?.present( controller, animated: true, completion: nil)
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
     }
     
 }
