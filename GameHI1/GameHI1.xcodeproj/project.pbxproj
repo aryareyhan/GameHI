@@ -65,7 +65,7 @@
 		04BC426E2B21E5E100910166 /* GameHI1 */ = {
 			isa = PBXGroup;
 			children = (
-				04BC42862B21E60700910166 /* ViewController */,
+				04BC42862B21E60700910166 /* Views */,
 				04BC426F2B21E5E100910166 /* AppDelegate.swift */,
 				04BC42712B21E5E100910166 /* SceneDelegate.swift */,
 				04BC42732B21E5E100910166 /* ViewController.swift */,
@@ -78,13 +78,13 @@
 			path = GameHI1;
 			sourceTree = "<group>";
 		};
-		04BC42862B21E60700910166 /* ViewController */ = {
+		04BC42862B21E60700910166 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				04BC42872B21EAC000910166 /* LoginViewController.swift */,
 				04BC428B2B21FAD000910166 /* RegisterViewController.swift */,
 			);
-			path = ViewController;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
