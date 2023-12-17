@@ -20,12 +20,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     var categories: [GameCategory] = [
-        .init(id: "id1", name: "Horror", image: "horrorCategory"),
-        .init(id: "id1", name: "Horror", image: "horrorCategory"),
-        .init(id: "id1", name: "Horror", image: "horrorCategory"),
-        .init(id: "id1", name: "Horror", image: "horrorCategory"),
-        .init(id: "id1", name: "Horror", image: "horrorCategory"),
-        .init(id: "id1", name: "Horror", image: "horrorCategory")
+        .init(id: "id1", name: "All Games", image: "allCategory"),
+        .init(id: "id2", name: "Action", image: "actionCategory"),
+        .init(id: "id3", name: "Adventure", image: "adventureCategory"),
+        .init(id: "id4", name: "Strategy", image: "strategyCategory"),
+        .init(id: "id5", name: "Puzzle", image: "puzzleCategory"),
+        .init(id: "id6", name: "Horror", image: "horrorCategory"),
+        .init(id: "id7", name: "Arcade", image: "arcadeCategory"),
+        .init(id: "id8", name: "Music", image: "musicCategory")
     ]
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!

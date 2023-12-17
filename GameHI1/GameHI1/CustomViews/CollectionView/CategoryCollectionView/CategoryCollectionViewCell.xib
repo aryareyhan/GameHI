@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC9-la-DRX">
-                                <rect key="frame" x="46" y="16" width="104" height="18"/>
+                                <rect key="frame" x="54" y="16" width="96" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                         <constraints>
                             <constraint firstItem="qPo-er-zx9" firstAttribute="leading" secondItem="MxI-jT-pRJ" secondAttribute="leading" constant="8" id="8T5-zS-tmQ"/>
                             <constraint firstAttribute="height" constant="50" id="9tR-qg-GZp"/>
-                            <constraint firstItem="qC9-la-DRX" firstAttribute="leading" secondItem="qPo-er-zx9" secondAttribute="trailing" constant="8" id="Mml-b5-JaC"/>
+                            <constraint firstItem="qC9-la-DRX" firstAttribute="leading" secondItem="qPo-er-zx9" secondAttribute="trailing" constant="16" id="Mml-b5-JaC"/>
                             <constraint firstAttribute="trailing" secondItem="qC9-la-DRX" secondAttribute="trailing" id="NRW-Kn-xGJ"/>
                             <constraint firstItem="qC9-la-DRX" firstAttribute="centerY" secondItem="MxI-jT-pRJ" secondAttribute="centerY" id="TKn-Rf-jdy"/>
                             <constraint firstAttribute="width" constant="150" id="obc-7M-wgq"/>

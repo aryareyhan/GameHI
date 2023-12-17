@@ -103,6 +103,7 @@
 		4B8110CC2B2EFEC900266AE5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				4BF6C9582B2F1B7800535D39 /* TableView */,
 				4B8110DD2B2F03EF00266AE5 /* CardView */,
 				4B8110CD2B2EFED200266AE5 /* CollectionView */,
 			);
@@ -148,6 +149,13 @@
 				4B8110DE2B2F03FE00266AE5 /* CardView.swift */,
 			);
 			path = CardView;
+			sourceTree = "<group>";
+		};
+		4BF6C9582B2F1B7800535D39 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
