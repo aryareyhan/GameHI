@@ -48,4 +48,10 @@ extension ListGamesViewController: UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = GameDetailViewController.instantiate()
+        controller.game = games[indexPath.row]
+        navigationController?.present( controller, animated: true, completion: nil)
+    }
 }
