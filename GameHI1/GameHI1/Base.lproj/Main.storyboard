@@ -857,7 +857,7 @@
                                         <rect key="frame" x="0.0" y="559.66666666666663" width="361" height="218"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AdminGameListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGameListTableViewCell" rowHeight="80" id="eLv-I0-rau" customClass="AdminGameListTableViewCell" customModule="GameHI1" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AdminGameListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="adminCell" rowHeight="80" id="eLv-I0-rau" customClass="AdminGameListTableViewCell" customModule="GameHI1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="361" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLv-I0-rau" id="T9z-6E-86d">
@@ -901,6 +901,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="YLR-sA-dGW" secondAttribute="bottom" constant="22.666666666666657" id="ZUd-3U-uGF"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <accessibility key="accessibilityConfiguration" identifier="adminCell"/>
                                                 <connections>
                                                     <outlet property="gameLogoImageView" destination="snG-vb-IrU" id="lWN-vF-pOw"/>
                                                     <outlet property="gameTitleLabel" destination="Phc-RG-d9U" id="aQu-e6-qxj"/>
@@ -928,13 +929,12 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="adminListTableView" destination="vPg-I3-xh0" id="Idh-Fw-eQM"/>
                         <outlet property="bannerTF" destination="gDS-Sh-MJp" id="aWD-cc-Um4"/>
                         <outlet property="categoryTF" destination="vRy-ZS-hAf" id="S5S-0V-BQn"/>
                         <outlet property="descriptionTF" destination="nRZ-K2-wfo" id="11v-Gb-SbG"/>
-                        <outlet property="gamesTableView" destination="vPg-I3-xh0" id="hge-KC-Wah"/>
                         <outlet property="logoTF" destination="Ein-Id-5vM" id="43C-FT-KMp"/>
                         <outlet property="minimumAgeTF" destination="nPE-di-peW" id="ahD-G5-Rti"/>
+                        <outlet property="newAdminTableView" destination="vPg-I3-xh0" id="jHJ-gq-Tup"/>
                         <outlet property="priceTF" destination="95l-jb-Pnx" id="zIQ-eB-JR4"/>
                         <outlet property="ratingTF" destination="hAU-n5-vLc" id="mnR-7i-2MV"/>
                         <outlet property="sizeTF" destination="lM9-ti-Cd7" id="MJU-YI-wLg"/>
@@ -1124,7 +1124,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cQ6-6P-o6J"/>
-        <segue reference="bCK-mQ-OqD"/>
+        <segue reference="Zx1-9d-brE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.circle.fill" catalog="system" width="128" height="123"/>

@@ -8,9 +8,6 @@
 import UIKit
 
 class AdminGameListTableViewCell: UITableViewCell {
-
-    static let identifier = "AdminGameListTableViewCell"
-    
     @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var gameLogoImageView: UIImageView!
     override func awakeFromNib() {
@@ -23,10 +20,4 @@ class AdminGameListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func setup(game: Game){
-        gameTitleLabel.text = game.category
-        gameLogoImageView.image = UIImage(named: game.logo)
-    }
-
 }
