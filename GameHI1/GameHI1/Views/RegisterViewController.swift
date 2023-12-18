@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RegisterViewController: UIViewController {
     
@@ -56,11 +57,18 @@ class RegisterViewController: UIViewController {
     }
     
     func saveUserInfo(username: String, email: String, password: String) {
+        // Check if a user with the same username already exists
+        if userExists(withUsername: username) {
+            showAlert(message: "Username already exists. Please choose a different username.")
+            return
+        }
+
+        // If no duplicate username, proceed to save the user
         let newUser = UserDatas(context: context)
         newUser.username = username
         newUser.email = email
         newUser.password = password
-    
+
         do {
             try context.save()
             print("User saved successfully!")
@@ -69,6 +77,20 @@ class RegisterViewController: UIViewController {
             print("Error saving user: \(error)")
         }
     }
+
+    func userExists(withUsername username: String) -> Bool {
+        let fetchRequest: NSFetchRequest<UserDatas> = UserDatas.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "username == %@", username)
+
+        do {
+            let users = try context.fetch(fetchRequest)
+            return !users.isEmpty
+        } catch {
+            print("Error checking for duplicate user: \(error)")
+            return false
+        }
+    }
+
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Validation Error", message: message, preferredStyle: .alert)

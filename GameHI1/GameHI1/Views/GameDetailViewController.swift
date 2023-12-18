@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameDetailViewController: UIViewController {
     
@@ -48,6 +49,12 @@ class GameDetailViewController: UIViewController {
     }
     
     private func saveToCart() {
+        // Check if the item is already in the cart for the logged-in user
+        if isItemAlreadyInCart() {
+            showAlert(message: "Item is already in the cart.")
+            print("Item is already in the cart.")
+            return
+        }
 
         // Create a new CartDatas object
         let cartData = CartDatas(context: context)
@@ -70,6 +77,21 @@ class GameDetailViewController: UIViewController {
             print("Error saving to cart: \(error)")
         }
     }
+
+    private func isItemAlreadyInCart() -> Bool {
+        // Check if the item is already in the cart for the logged-in user
+        let fetchRequest: NSFetchRequest<CartDatas> = CartDatas.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "username == %@ AND title == %@", HomeViewController.loggedInUsername!, game.name)
+
+        do {
+            let cartItems = try context.fetch(fetchRequest)
+            return !cartItems.isEmpty
+        } catch {
+            print("Error checking cart: \(error)")
+            return false
+        }
+    }
+
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
