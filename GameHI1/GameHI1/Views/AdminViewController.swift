@@ -110,6 +110,3 @@ class AdminViewController: UIViewController {
             ss3TF.text = ""
         }
     }
-    
-    
-}

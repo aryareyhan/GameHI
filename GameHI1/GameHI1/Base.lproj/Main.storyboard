@@ -890,10 +890,10 @@
             </objects>
             <point key="canvasLocation" x="2336.6412213740459" y="757.74647887323943"/>
         </scene>
-        <!--View Controller-->
+        <!--Admin List View Controller-->
         <scene sceneID="gmG-uJ-gab">
             <objects>
-                <viewController id="Ktd-cI-DEZ" sceneMemberID="viewController">
+                <viewController id="Ktd-cI-DEZ" customClass="AdminListViewController" customModule="GameHI1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlc-YD-TK4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -902,7 +902,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="98" id="tq7-qZ-yll">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="adminListCell" rowHeight="98" id="tq7-qZ-yll" customClass="AdminTableViewCell" customModule="GameHI1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tq7-qZ-yll" id="LVU-GZ-qqv">
@@ -948,6 +948,10 @@
                                                 <constraint firstItem="E59-GH-typ" firstAttribute="centerY" secondItem="LVU-GZ-qqv" secondAttribute="centerY" id="zoJ-do-1WE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logoImageView" destination="FLr-BE-B4a" id="lRx-xQ-vka"/>
+                                            <outlet property="nameLabel" destination="1qD-3U-yrq" id="WeW-Ja-Pu8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -961,6 +965,9 @@
                             <constraint firstItem="ypO-eX-Uxa" firstAttribute="trailing" secondItem="aef-t7-Xs8" secondAttribute="trailing" id="pZi-Oy-3yE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adminListTableView" destination="ypO-eX-Uxa" id="Kd4-DC-R4z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEU-cN-UQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
