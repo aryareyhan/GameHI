@@ -108,6 +108,7 @@
                         <outlet property="passwordTextField" destination="Fbq-lV-jUr" id="oaJ-50-Kbi"/>
                         <outlet property="usernameTextField" destination="9fJ-Ho-ItW" id="WE9-qj-VQq"/>
                         <segue destination="sBm-mG-gEE" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Fgx-MI-R3b"/>
+                        <segue destination="eGw-t1-ZvQ" kind="presentation" identifier="adminSegue" modalPresentationStyle="fullScreen" id="hWo-Gc-ZGp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -676,16 +677,16 @@
             </objects>
             <point key="canvasLocation" x="3096.9465648854962" y="26.760563380281692"/>
         </scene>
-        <!--View Controller-->
+        <!--Admin View Controller-->
         <scene sceneID="svQ-La-Cns">
             <objects>
-                <viewController id="eGw-t1-ZvQ" sceneMemberID="viewController">
+                <viewController id="eGw-t1-ZvQ" customClass="AdminViewController" customModule="GameHI1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afw-d5-NOQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-gS-GWT">
-                                <rect key="frame" x="16" y="75" width="361" height="784.33333333333337"/>
+                                <rect key="frame" x="16" y="16" width="361" height="777.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-w8-YNn">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="39.666666666666664"/>
@@ -694,13 +695,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only Admins can access this page." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHa-NP-Rwl">
-                                        <rect key="frame" x="0.0" y="64.666666666666657" width="361" height="18"/>
+                                        <rect key="frame" x="0.0" y="58.666666666666671" width="361" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-l1-emx">
-                                        <rect key="frame" x="0.0" y="107.66666666666666" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="95.666666666666671" width="361" height="34.000000000000014"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LH5-MZ-vDg">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -721,7 +722,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="buN-Pv-ElO">
-                                        <rect key="frame" x="0.0" y="166.66666666666666" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="148.66666666666666" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Minimum Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-di-peW">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -742,7 +743,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="47y-Cl-wuG">
-                                        <rect key="frame" x="0.0" y="225.66666666666669" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="201.66666666666666" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRy-ZS-hAf">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -763,7 +764,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wFg-fY-gzn">
-                                        <rect key="frame" x="0.0" y="284.66666666666669" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="254.66666666666669" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Logo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ein-Id-5vM">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -784,7 +785,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="g8X-hc-NHQ">
-                                        <rect key="frame" x="0.0" y="343.66666666666669" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="307.66666666666669" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Rating Image" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAU-n5-vLc">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -805,7 +806,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FhP-av-jqM">
-                                        <rect key="frame" x="0.0" y="402.66666666666669" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="360.66666666666669" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Screenshot 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTs-QN-w2X">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -826,21 +827,35 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLO-j3-tZ4">
-                                        <rect key="frame" x="0.0" y="461.66666666666663" width="361" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="413.66666666666669" width="361" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add New Game">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" name="AccentColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addGameOnClick:" destination="eGw-t1-ZvQ" eventType="touchUpInside" id="9w1-Sj-FDO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPY-Bs-gDY">
+                                        <rect key="frame" x="0.0" y="467" width="361" height="34.333333333333314"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Logout">
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="bCK-mQ-OqD"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLe-MH-1cZ">
-                                        <rect key="frame" x="0.0" y="521" width="361" height="20.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="520.33333333333337" width="361" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-I3-xh0">
-                                        <rect key="frame" x="0.0" y="566.33333333333337" width="361" height="218"/>
+                                        <rect key="frame" x="0.0" y="559.66666666666663" width="361" height="218"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="eLv-I0-rau">
@@ -904,6 +919,23 @@
                             <constraint firstItem="7bM-gS-GWT" firstAttribute="leading" secondItem="el5-Rs-Y6z" secondAttribute="leading" constant="16" id="yKq-ly-1R4"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bannerTF" destination="gDS-Sh-MJp" id="aWD-cc-Um4"/>
+                        <outlet property="categoryTF" destination="vRy-ZS-hAf" id="S5S-0V-BQn"/>
+                        <outlet property="descriptionTF" destination="nRZ-K2-wfo" id="11v-Gb-SbG"/>
+                        <outlet property="gamesTableView" destination="vPg-I3-xh0" id="hge-KC-Wah"/>
+                        <outlet property="logoTF" destination="Ein-Id-5vM" id="43C-FT-KMp"/>
+                        <outlet property="minimumAgeTF" destination="nPE-di-peW" id="ahD-G5-Rti"/>
+                        <outlet property="priceTF" destination="95l-jb-Pnx" id="zIQ-eB-JR4"/>
+                        <outlet property="ratingTF" destination="hAU-n5-vLc" id="mnR-7i-2MV"/>
+                        <outlet property="sizeTF" destination="lM9-ti-Cd7" id="MJU-YI-wLg"/>
+                        <outlet property="ss1TF" destination="jZ2-tk-s7L" id="pOz-7o-Slu"/>
+                        <outlet property="ss2TF" destination="XTs-QN-w2X" id="YbA-mb-RUv"/>
+                        <outlet property="ss3TF" destination="y1u-rM-zV8" id="xlR-ew-8iD"/>
+                        <outlet property="titleTF" destination="LH5-MZ-vDg" id="GAj-4d-1a7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu2-la-g09" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1076,7 +1108,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zx1-9d-brE"/>
+        <segue reference="bCK-mQ-OqD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.circle.fill" catalog="system" width="128" height="123"/>
@@ -1088,6 +1120,9 @@
         <namedColor name="AccentColor">
             <color red="0.86274509803921573" green="0.55686274509803924" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

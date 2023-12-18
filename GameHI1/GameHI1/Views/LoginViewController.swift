@@ -311,6 +311,12 @@ class LoginViewController: UIViewController {
             // Handle empty username or password
             return
         }
+        
+        if username == "admin" && enteredPassword == "admin123" {
+            // Admin credentials, perform adminSegue
+            performSegue(withIdentifier: "adminSegue", sender: nil)
+            return
+        }
 
         if let user = fetchUser(username: username) {
             // User found, compare passwords

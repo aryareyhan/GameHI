@@ -93,7 +93,4 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         fetchCartData()
         print("Cart emptied")
     }
-
-    
-    
 }
