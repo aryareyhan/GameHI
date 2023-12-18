@@ -904,10 +904,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="JLe-MH-1cZ" firstAttribute="top" secondItem="CLO-j3-tZ4" secondAttribute="bottom" constant="25" id="0E7-Mh-Jqb"/>
-                                    <constraint firstItem="vPg-I3-xh0" firstAttribute="leading" secondItem="7bM-gS-GWT" secondAttribute="leading" id="0cW-os-MMU"/>
                                     <constraint firstAttribute="bottom" secondItem="vPg-I3-xh0" secondAttribute="bottom" id="iTy-L1-9hy"/>
                                     <constraint firstAttribute="bottom" secondItem="vPg-I3-xh0" secondAttribute="bottom" id="pHD-Vv-9it"/>
-                                    <constraint firstAttribute="trailing" secondItem="vPg-I3-xh0" secondAttribute="trailing" id="zqu-o7-3rE"/>
                                 </constraints>
                             </stackView>
                         </subviews>
