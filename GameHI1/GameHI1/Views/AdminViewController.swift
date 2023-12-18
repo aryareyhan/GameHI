@@ -8,11 +8,12 @@
 import UIKit
 import CoreData
 
-class AdminViewController: UIViewController {
+class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var newAdminTableView: UITableView!
+    var games: [Game] = []
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-    @IBOutlet weak var gamesTableView: UITableView!
     
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var priceTF: UITextField!
@@ -29,11 +30,12 @@ class AdminViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        newAdminTableView.dataSource = self
+        fetchGames()
     }
     @IBAction func addGameOnClick(_ sender: Any) {
         saveNewGame()
-        gamesTableView.reloadData()
+        newAdminTableView.reloadData()
     }
     
     func saveNewGame() {
@@ -109,4 +111,35 @@ class AdminViewController: UIViewController {
         ss3TF.text = ""
     }
     
+    private func fetchGames(forCategory category: String? = nil) {
+        let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
+
+        do {
+            let allGamesDatas = try context.fetch(fetchRequest)
+
+            // Convert 'allGamesDatas' to 'games' array
+            games = allGamesDatas.map { Game(gameDatas: $0) }
+            print(games)
+            
+            newAdminTableView.reloadData()
+
+        } catch {
+            print("Error fetching games from Core Data: \(error)")
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let gameItem = games[indexPath.row]
+        let cell = newAdminTableView.dequeueReusableCell(withIdentifier: "adminCell", for: indexPath) as! AdminGameListTableViewCell
+
+        cell.gameLogoImageView.image = UIImage(named: gameItem.logo)
+        cell.gameTitleLabel.text = gameItem.name
+
+        return cell
+    }
 }
