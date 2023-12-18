@@ -26,6 +26,7 @@
 		4B8110D92B2F00A200266AE5 /* GameCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8110D82B2F00A200266AE5 /* GameCategory.swift */; };
 		4B8110DC2B2F039D00266AE5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8110DB2B2F039D00266AE5 /* UIView+Extensions.swift */; };
 		4B8110DF2B2F03FE00266AE5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8110DE2B2F03FE00266AE5 /* CardView.swift */; };
+		4BC6557F2B2FE992007C1B28 /* GameHI1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6557D2B2FE992007C1B28 /* GameHI1.xcdatamodeld */; };
 		4BF6C9602B2F37DE00535D39 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6C95F2B2F37DE00535D39 /* Game.swift */; };
 		4BF6C9622B2F3D5100535D39 /* TopGrossingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6C9612B2F3D5100535D39 /* TopGrossingTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		4B8110D82B2F00A200266AE5 /* GameCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategory.swift; sourceTree = "<group>"; };
 		4B8110DB2B2F039D00266AE5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4B8110DE2B2F03FE00266AE5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4BC6557E2B2FE992007C1B28 /* GameHI1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameHI1.xcdatamodel; sourceTree = "<group>"; };
 		4BF6C95F2B2F37DE00535D39 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4BF6C9612B2F3D5100535D39 /* TopGrossingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGrossingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				04BC427B2B21E5E400910166 /* Assets.xcassets */,
 				04BC427D2B21E5E400910166 /* LaunchScreen.storyboard */,
 				04BC42802B21E5E400910166 /* Info.plist */,
+				4BC6557D2B2FE992007C1B28 /* GameHI1.xcdatamodeld */,
 			);
 			path = GameHI1;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				4B8110CA2B2EFD1E00266AE5 /* HomeViewController.swift in Sources */,
 				4B8110DF2B2F03FE00266AE5 /* CardView.swift in Sources */,
 				04BC42722B21E5E100910166 /* SceneDelegate.swift in Sources */,
+				4BC6557F2B2FE992007C1B28 /* GameHI1.xcdatamodeld in Sources */,
 				4BF6C9622B2F3D5100535D39 /* TopGrossingTableViewCell.swift in Sources */,
 				4B78515D2B2F5E5500DA9AD8 /* GameDetailViewController.swift in Sources */,
 			);
@@ -482,6 +486,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4BC6557D2B2FE992007C1B28 /* GameHI1.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4BC6557E2B2FE992007C1B28 /* GameHI1.xcdatamodel */,
+			);
+			currentVersion = 4BC6557E2B2FE992007C1B28 /* GameHI1.xcdatamodel */;
+			path = GameHI1.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04BC42642B21E5E100910166 /* Project object */;
 }

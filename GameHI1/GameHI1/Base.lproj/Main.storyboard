@@ -8,7 +8,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -563,41 +562,19 @@
                                             <constraint firstAttribute="height" constant="90" id="ONS-b7-yGY"/>
                                         </constraints>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ll-uv-h0z">
-                                        <rect key="frame" x="0.0" y="215" width="361" height="150"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pubg1" translatesAutoresizingMaskIntoConstraints="NO" id="h7S-cb-ncA">
+                                        <rect key="frame" x="0.0" y="215" width="361" height="175"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="z7C-bS-MhG"/>
+                                            <constraint firstAttribute="height" constant="175" id="CCH-HP-EYM"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jnb-PE-XGP">
-                                            <size key="itemSize" width="335" height="253"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameScreenshotCollectionViewCell" id="q4e-xl-fCa" customClass="GameScreenshotCollectionViewCell" customModule="GameHI1" customModuleProvider="target">
-                                                <rect key="frame" x="13" y="0.0" width="335" height="253"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KXO-V4-fIP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="253"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQC-6e-21M">
-                                                            <rect key="frame" x="47" y="8" width="242" height="237"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </collectionViewCellContentView>
-                                                <size key="customSize" width="335" height="253"/>
-                                                <connections>
-                                                    <outlet property="screenshotImageView" destination="MQC-6e-21M" id="zTL-lh-4Ug"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="PqM-du-fG1">
-                                        <rect key="frame" x="0.0" y="385" width="361" height="174"/>
+                                        <rect key="frame" x="0.0" y="410" width="361" height="149"/>
                                         <string key="text">PUBG Mobile is a battle royale game where 100 players parachute onto an island, scavenge for weapons, and compete to be the last one standing. The game offers realistic graphics, a variety of weapons, and intense combat.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -605,7 +582,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5ll-uv-h0z" firstAttribute="centerX" secondItem="Giv-Si-0Do" secondAttribute="centerX" id="K8j-rU-rEC"/>
+                                    <constraint firstItem="h7S-cb-ncA" firstAttribute="centerX" secondItem="Giv-Si-0Do" secondAttribute="centerX" id="cv7-JS-NGz"/>
                                     <constraint firstItem="GWH-fN-CKb" firstAttribute="top" secondItem="cIa-ts-uGn" secondAttribute="bottom" constant="20" id="vGe-cd-tgM"/>
                                 </constraints>
                             </stackView>
@@ -630,7 +607,7 @@
                         <outlet property="priceLabel" destination="CdH-Sq-pVg" id="3bQ-Dd-NYZ"/>
                         <outlet property="ratingImageView" destination="RKO-1D-DwE" id="EQs-jk-KfC"/>
                         <outlet property="ratingLabel" destination="62n-oB-rvz" id="eKS-iO-onr"/>
-                        <outlet property="screenshotCollectionView" destination="5ll-uv-h0z" id="SQL-ep-IyK"/>
+                        <outlet property="screenshotImageView" destination="h7S-cb-ncA" id="hZX-kN-7oe"/>
                         <outlet property="sizeLabel" destination="q7D-2o-MHc" id="vjn-Zg-Krs"/>
                         <outlet property="titleLabel" destination="4AG-ev-WMB" id="gKV-48-TqQ"/>
                     </connections>
@@ -678,6 +655,7 @@
         <image name="cart.circle.fill" catalog="system" width="128" height="123"/>
         <image name="consoleImage" width="393" height="280"/>
         <image name="door.left.hand.closed" catalog="system" width="108" height="128"/>
+        <image name="pubg1" width="1687" height="949"/>
         <image name="pubgBanner" width="2560" height="1440"/>
         <image name="pubgLogo" width="512" height="512"/>
         <namedColor name="AccentColor">

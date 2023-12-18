@@ -18,7 +18,7 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var ratingImageView: UIImageView!
-    @IBOutlet weak var screenshotCollectionView: UICollectionView!
+    @IBOutlet weak var screenshotImageView: UIImageView!
     
     var game: Game!
     
@@ -29,6 +29,7 @@ class GameDetailViewController: UIViewController {
     }
     
     private func populateView(){
+        screenshotImageView.image = UIImage(named: game.screenshot1)
     bannerImageView.image = UIImage(named: game.bannerImage)
         logoImageView.image = UIImage(named: game.logo)
         titleLabel.text = game.name

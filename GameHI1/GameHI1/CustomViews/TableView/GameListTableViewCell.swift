@@ -20,7 +20,7 @@ class GameListTableViewCell: UITableViewCell {
     
     func setup(game: Game){
         gameImageView.image = UIImage(named: game.logo)
-        ageLabel.text = game.minimumAge
+        ageLabel.text = "Age \(game.minimumAge)"
         categoryLabel.text = game.category
         priceLabel.text = game.price
         titleLabel.text = game.name
