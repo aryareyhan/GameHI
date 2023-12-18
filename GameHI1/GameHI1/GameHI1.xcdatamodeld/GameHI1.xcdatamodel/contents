@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G313" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Games" representedClassName="Games" syncable="YES" codeGenerationType="class">
-        <attribute name="gameAge" optional="YES" attributeType="String"/>
-        <attribute name="gameBannerImage" optional="YES" attributeType="String"/>
-        <attribute name="gameCategory" optional="YES" attributeType="String"/>
+    <entity name="GameDatas" representedClassName="GameDatas" syncable="YES">
+        <attribute name="bannerImage" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="gameDescription" optional="YES" attributeType="String"/>
-        <attribute name="gameLogo" optional="YES" attributeType="String"/>
-        <attribute name="gameName" optional="YES" attributeType="String"/>
-        <attribute name="gamePrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="gameRatingImage" optional="YES" attributeType="String"/>
-        <attribute name="gameRatingText" optional="YES" attributeType="String"/>
-        <attribute name="gameScreenshotImage" optional="YES" attributeType="String"/>
-        <attribute name="gameSize" optional="YES" attributeType="String"/>
+        <attribute name="logo" optional="YES" attributeType="String"/>
+        <attribute name="minimumAge" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="ratingImage" optional="YES" attributeType="String"/>
+        <attribute name="ratingText" optional="YES" attributeType="String"/>
+        <attribute name="screenshot1" optional="YES" attributeType="String"/>
+        <attribute name="screenshot2" optional="YES" attributeType="String"/>
+        <attribute name="screenshot3" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserDatas" representedClassName="UserDatas" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>

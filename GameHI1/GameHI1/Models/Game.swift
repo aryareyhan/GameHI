@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Game{
-   // Texts
+struct Game {
+    // Texts
     let name: String
     let price: String
     let minimumAge: String
@@ -25,4 +25,20 @@ struct Game{
     let screenshot2: String
     let screenshot3: String
     
+    init(gameDatas: GameDatas) {
+        self.name = gameDatas.name ?? ""
+        self.price = gameDatas.price ?? ""
+        self.minimumAge = gameDatas.minimumAge ?? ""
+        self.size = gameDatas.size ?? ""
+        self.category = gameDatas.category ?? ""
+        self.description = gameDatas.gameDescription ?? ""
+        self.ratingText = gameDatas.ratingText ?? ""
+        
+        self.logo = gameDatas.logo ?? ""
+        self.bannerImage = gameDatas.bannerImage ?? ""
+        self.ratingImage = gameDatas.ratingImage ?? ""
+        self.screenshot1 = gameDatas.screenshot1 ?? ""
+        self.screenshot2 = gameDatas.screenshot2 ?? ""
+        self.screenshot3 = gameDatas.screenshot3 ?? ""
+    }
 }

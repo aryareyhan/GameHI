@@ -1052,6 +1052,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="WFT-xn-2XC"/>
         <segue reference="GjA-xK-Ac3"/>
     </inferredMetricsTieBreakers>
     <resources>
