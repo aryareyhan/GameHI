@@ -30,6 +30,23 @@ class GameDataManager {
         }
     }
     
+    func clearCartData(forUsername username: String) {
+            let fetchRequest: NSFetchRequest<CartDatas> = CartDatas.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "username == %@", username)
+
+            do {
+                let cartDatas = try context.fetch(fetchRequest)
+
+                for cartData in cartDatas {
+                    context.delete(cartData)
+                }
+
+                try context.save()
+            } catch {
+                print("Error clearing cart data: \(error)")
+            }
+        }
+    
     func saveGamesIfNeeded() {
             let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
 

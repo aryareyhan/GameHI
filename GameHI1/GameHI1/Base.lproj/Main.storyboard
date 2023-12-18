@@ -1044,6 +1044,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Checkout" cornerStyle="capsule">
                                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="checkoutButtonOnClick:" destination="lHe-y6-Su5" eventType="touchUpInside" id="EFG-2Z-psF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

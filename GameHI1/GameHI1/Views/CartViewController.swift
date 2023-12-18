@@ -84,6 +84,16 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    @IBAction func checkoutButtonOnClick(_ sender: Any) {
+        guard let loggedInUsername = HomeViewController.loggedInUsername else {
+            // Handle the case where the username is nil
+            return
+        }
+        GameDataManager.shared.clearCartData(forUsername: loggedInUsername)
+        fetchCartData()
+        print("Cart emptied")
+    }
+
     
     
 }
