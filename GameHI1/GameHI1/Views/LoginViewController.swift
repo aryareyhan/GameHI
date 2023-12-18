@@ -29,6 +29,26 @@ class GameDataManager {
             print("Error clearing GameDatas: \(error)")
         }
     }
+    
+    func saveGamesIfNeeded() {
+            let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
+
+            do {
+                let existingGames = try context.fetch(fetchRequest)
+
+                // Check if Core Data already has games
+                guard existingGames.isEmpty else {
+                    print("Games already exist in Core Data. Skipping save.")
+                    return
+                }
+
+                // Save games only if Core Data is empty
+                saveGames()
+
+            } catch {
+                print("Error fetching games from Core Data: \(error)")
+            }
+        }
 
 
     func saveGames() {
@@ -207,8 +227,7 @@ class GameDataManager {
                 screenshot2: "",
                 screenshot3: ""
             )
-
-]
+        ]
 
         for gameData in games {
             let newGame = GameDatas(context: context)
@@ -261,7 +280,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GameDataManager.shared.saveGames()
+        GameDataManager.shared.saveGamesIfNeeded()
 //        GameDataManager.shared.clearGameData()
         // Do any additional setup after loading the view.
     }
@@ -283,6 +302,8 @@ class LoginViewController: UIViewController {
             if storedPassword == enteredPassword {
                 // Passwords match, login successful
                 print("Login successful!")
+                
+                HomeViewController.loggedInUsername = username
 
                 // Perform segue with identifier "loginSegue"
                 performSegue(withIdentifier: "loginSegue", sender: nil)

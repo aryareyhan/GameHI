@@ -8,6 +8,8 @@
 import UIKit
 
 class GameDetailViewController: UIViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -41,4 +43,37 @@ class GameDetailViewController: UIViewController {
         ratingImageView.image = UIImage(named: game.ratingImage)
     }
 
+    @IBAction func getButtonOnClick(_ sender: Any) {
+        saveToCart()
+    }
+    
+    private func saveToCart() {
+
+        // Create a new CartDatas object
+        let cartData = CartDatas(context: context)
+
+        // Set attributes
+        cartData.category = game.category
+        cartData.title = game.name
+        cartData.price = game.price
+        cartData.logo = game.logo
+
+        // Assuming 'loggedInUsername' is a static property in your HomeViewController
+        cartData.username = HomeViewController.loggedInUsername
+
+        // Save the context to persist the changes
+        do {
+            try context.save()
+            showAlert(message: "Item added to cart.")
+            print("Item added to cart.")
+        } catch {
+            print("Error saving to cart: \(error)")
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }

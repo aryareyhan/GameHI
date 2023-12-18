@@ -10,6 +10,8 @@ import CoreData
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    static var loggedInUsername: String?
+    
     @IBOutlet weak var topGrossingTableView: UITableView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
@@ -67,6 +69,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         registerCategoriesCells()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let loggedInUsername = HomeViewController.loggedInUsername {
+            print("Logged in user: \(loggedInUsername)")
+            // Do whatever you need with the username
+        } else {
+            print("Fail passing login")
+        }
+    }
+
     private func registerCategoriesCells(){
         categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
     }

@@ -441,9 +441,17 @@
                     <navigationItem key="navigationItem" id="859-Zr-feD">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="door.left.hand.closed" catalog="system" id="h0z-9X-cwg">
                             <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Zx1-9d-brE"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart.circle.fill" catalog="system" id="ZSE-7i-ROM">
                             <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <segue destination="lHe-y6-Su5" kind="popoverPresentation" popoverAnchorBarButtonItem="ZSE-7i-ROM" id="7fl-H9-wYG">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -510,6 +518,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Get" cornerStyle="capsule"/>
+                                                        <connections>
+                                                            <action selector="getButtonOnClick:" destination="eLH-Lp-EOK" eventType="touchUpInside" id="A5F-lg-x5Q"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -932,16 +943,16 @@
             </objects>
             <point key="canvasLocation" x="3894" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--Cart View Controller-->
         <scene sceneID="wXA-dw-VWB">
             <objects>
-                <viewController id="lHe-y6-Su5" sceneMemberID="viewController">
+                <viewController id="lHe-y6-Su5" customClass="CartViewController" customModule="GameHI1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24s-e5-cRW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kpJ-P9-Uec">
-                                <rect key="frame" x="16" y="59" width="361" height="747"/>
+                                <rect key="frame" x="16" y="0.0" width="361" height="796"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEg-Dn-OFu">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="39.666666666666664"/>
@@ -950,10 +961,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ro8-JC-9ev">
-                                        <rect key="frame" x="0.0" y="55.666666666666686" width="361" height="630.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="55.666666666666686" width="361" height="679.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="88" id="c6c-2o-rIt">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="88" id="c6c-2o-rIt" customClass="CartTableViewCell" customModule="GameHI1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="361" height="88"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c6c-2o-rIt" id="Qc3-9V-bbc">
@@ -1009,11 +1020,17 @@
                                                         <constraint firstItem="Qea-AW-prr" firstAttribute="centerY" secondItem="Qc3-9V-bbc" secondAttribute="centerY" id="uUA-rz-w0A"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="categoryLabel" destination="sRE-Ff-ch3" id="tnW-oA-2Br"/>
+                                                    <outlet property="logoImageView" destination="kgY-Oi-Nu5" id="qxf-OG-aTN"/>
+                                                    <outlet property="priceLabel" destination="aYf-Oi-YSA" id="VSe-S4-kkx"/>
+                                                    <outlet property="titleLabel" destination="VZo-gT-XYZ" id="9R0-9c-DxA"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s3j-gc-CvN">
-                                        <rect key="frame" x="0.0" y="702" width="361" height="45"/>
+                                        <rect key="frame" x="0.0" y="751" width="361" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price: IDR 69.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmd-JZ-rbP">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="45"/>
@@ -1045,6 +1062,10 @@
                             <constraint firstAttribute="bottom" secondItem="kpJ-P9-Uec" secondAttribute="bottom" constant="46" id="yVt-LN-met"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cartTableView" destination="Ro8-JC-9ev" id="ZEh-5E-gHO"/>
+                        <outlet property="totalPriceLabel" destination="pmd-JZ-rbP" id="95w-2W-j9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wv4-So-z2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1052,8 +1073,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WFT-xn-2XC"/>
-        <segue reference="GjA-xK-Ac3"/>
+        <segue reference="Zx1-9d-brE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.circle.fill" catalog="system" width="128" height="123"/>
