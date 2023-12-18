@@ -681,7 +681,7 @@
             <objects>
                 <viewController id="eGw-t1-ZvQ" customClass="AdminViewController" customModule="GameHI1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afw-d5-NOQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-gS-GWT">
@@ -1117,7 +1117,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="checkoutButtonOnClick:" destination="lHe-y6-Su5" eventType="touchUpInside" id="EFG-2Z-psF"/>
-                                                    <segue destination="eGw-t1-ZvQ" kind="presentation" id="cQ6-6P-o6J"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1148,7 +1147,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cQ6-6P-o6J"/>
         <segue reference="bCK-mQ-OqD"/>
     </inferredMetricsTieBreakers>
     <resources>
