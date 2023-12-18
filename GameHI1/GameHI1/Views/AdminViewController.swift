@@ -8,10 +8,15 @@
 import UIKit
 import CoreData
 
-class AdminViewController: UIViewController {
+class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var games: [Game] = []
+    
+   
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    @IBOutlet weak var adminListTableView: UITableView!
     @IBOutlet weak var gamesTableView: UITableView!
     
     @IBOutlet weak var titleTF: UITextField!
@@ -29,7 +34,13 @@ class AdminViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        gamesTableView.dataSource = self
+        gamesTableView.delegate = self
+        
+        registerCells()
+        
+        fetchGames()
     }
     @IBAction func addGameOnClick(_ sender: Any) {
         saveNewGame()
@@ -107,6 +118,42 @@ class AdminViewController: UIViewController {
         ss1TF.text = ""
         ss2TF.text = ""
         ss3TF.text = ""
+    }
+    
+    private func fetchGames(forCategory category: String? = nil) {
+        let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
+
+        // Apply a predicate to filter by category if provided
+        if let category = category {
+            fetchRequest.predicate = NSPredicate(format: "category == %@", category)
+        }
+
+        do {
+            let fetchedGamesDatas = try context.fetch(fetchRequest)
+
+            // Convert 'fetchedGamesDatas' to 'games' array
+            games = fetchedGamesDatas.map { Game(gameDatas: $0) }
+
+        } catch {
+            print("Error fetching games from Core Data: \(error)")
+        }
+    }
+    
+    private func registerCells(){
+        adminListTableView.register(UINib(nibName: AdminGameListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AdminGameListTableViewCell.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = adminListTableView.dequeueReusableCell(withIdentifier: AdminGameListTableViewCell.identifier) as! AdminGameListTableViewCell
+        
+        cell.setup(game: games[indexPath.row])
+        
+        return cell
     }
     
 }
