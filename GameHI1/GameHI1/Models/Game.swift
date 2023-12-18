@@ -24,4 +24,5 @@ struct Game{
     let screenshot1: String
     let screenshot2: String
     let screenshot3: String
+    
 }
