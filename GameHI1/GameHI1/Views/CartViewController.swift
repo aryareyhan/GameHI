@@ -14,6 +14,7 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var totalSizeLabel: UILabel!
     
     var cartData: [CartItem] = []
     

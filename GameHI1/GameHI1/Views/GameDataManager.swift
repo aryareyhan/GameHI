@@ -245,6 +245,70 @@ class GameDataManager {
                 screenshot1: "mario1",
                 screenshot2: "",
                 screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Call of Duty: Mobile",
+                price: "IDR 93.400",
+                minimumAge: "17+",
+                size: "1.6 GB",
+                category: "Action",
+                description: "No one can resist the allure of Call of Duty®: Mobile’s Season 11: Siren Song! Dive into the holiday-themed Miami Blitz MP map for some yuletide mayhem! Hit the high notes with the Mythic Siren – Siren Song and her Legendary BK57 - Spectral Song or be destroyed by the Epic Foxtrot - Unseen Angel and her Mythic Grau 5.56 - Phantom's Core! Two Mythic Draws appear in one season for the first time ever! Stay off the naughty list or get sleighed by the Epic Lerch",
+                ratingText: "5.0",
+                logo: "codmLogo",
+                bannerImage: "codmBanner",
+                ratingImage: "fiveRating",
+                screenshot1: "codm1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Dead Trigger 2",
+                price: "IDR 53.000",
+                minimumAge: "16+",
+                size: "978 MB",
+                category: "Action",
+                description: "Get ready for the ultimate zombie game. It is time for you to rise up and fight for your survival in a zombie apocalypse in this heart-stopping First Person Shooter (FPS) adventure! Build your personal Hideout and meet the Gunsmith, Scientist, Smuggler, Medic, and Engineer. It's not only an fps shooter, but it's also game for months. Unlock 10 regions and plan a strategy for 33 different battlefields. Save the world against zombies! Over 600 gameplay war scenarios and intensive storytelling campaigns. More than in any zombie game!",
+                ratingText: "3.0",
+                logo: "deadTriggerLogo",
+                bannerImage: "deadTriggerBanner",
+                ratingImage: "threeRating",
+                screenshot1: "deadTrigger1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Garena Free Fire",
+                price: "IDR 78.000",
+                minimumAge: "12+",
+                size: "405 MB",
+                category: "Action",
+                description: "Free Fire is a world-famous survival shooter game available on mobile. Each 10-minute game places you on a remote island where you are pit against 49 other players, all seeking survival. Players freely choose their starting point with their parachute, and aim to stay in the safe zone for as long as possible. Drive vehicles to explore the vast map, hide in the wild, or become invisible by proning under grass or rifts. Ambush, snipe, survive, there is only one goal: to survive and answer the call of duty.",
+                ratingText: "4.0",
+                logo: "freeFireLogo",
+                bannerImage: "freeFireBanner",
+                ratingImage: "fourRating",
+                screenshot1: "freeFire1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "FR Legends",
+                price: "IDR 101.000",
+                minimumAge: "7+",
+                size: "405 MB",
+                category: "Racing",
+                description: "FR LEGENDS is all about drifting! From driving legendary FR (front-engine, rear-wheel-drive) drift cars at world’s most iconic circuits, to customize everything on your car including engine swaps and wide-body kits. For the first time ever, a mobile game that lets you have tandem drift battles with AI drivers, unique scoring systems based on real world competition judging rules.",
+                ratingText: "5.0",
+                logo: "frLogo",
+                bannerImage: "frBanner",
+                ratingImage: "fiveRating",
+                screenshot1: "fr1",
+                screenshot2: "",
+                screenshot3: ""
             )
         ]
 
