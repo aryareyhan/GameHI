@@ -102,6 +102,8 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }
         GameDataManager.shared.clearCartData(forUsername: loggedInUsername)
         fetchCartData()
+        
+        showAlert(message: "Your transaction is confirmed. Enjoy!", title: "Transaction Successful")
         print("Cart emptied")
     }
 }
