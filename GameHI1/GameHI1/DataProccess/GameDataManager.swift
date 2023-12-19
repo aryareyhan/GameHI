@@ -309,6 +309,134 @@ class GameDataManager {
                 screenshot1: "fr1",
                 screenshot2: "",
                 screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Modern Combat 5",
+                price: "IDR 26.000",
+                minimumAge: "17+",
+                size: "1.1 GB",
+                category: "Action",
+                description: "Step onto the battlefield and answer the call in the classic title that raised the bar for first person shooter games with its great graphics, high-powered guns, and intense online multiplayer action. Modern Combat is the original mobile FPS where you can choose from more than 10 classes. Jump online for a bit of instant warfare. Fulfill your duty in the thrilling campaign as you shoot your way through one dire situation after another to save the world.",
+                ratingText: "2.0",
+                logo: "modernCombatLogo",
+                bannerImage: "modernCombatBanner",
+                ratingImage: "twoRating",
+                screenshot1: "modernCombat1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Bullet Force",
+                price: "IDR 92.000",
+                minimumAge: "16+",
+                size: "469 MB",
+                category: "Action",
+                description: "Best FPS on android, play online or offline first-person shooter with lots of weapons customizations and arenas. Bullet Force is a fast action 3d shooting game. Download this new FPS now! FPS PVP Multiplayer Action Fight alongside your teammates in massive 20-player war using a variety of iconic weapons. Be ready to kill all your enemies in this survival game. Weapons Customization with over 20 weapons, 30 weapon camouflages, multiple optics, laser sights, and barrel attachments the possibilities are virtually endless.",
+                ratingText: "3.0",
+                logo: "bulletForceLogo",
+                bannerImage: "bulletForceBanner",
+                ratingImage: "threeRating",
+                screenshot1: "bulletForce1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Critical Ops",
+                price: "IDR 11.000",
+                minimumAge: "16+",
+                size: "737 MB",
+                category: "Action",
+                description: "Critical Ops is a first-person shooter that features competitive combat through beautifully crafted maps and challenging game modes. Battle it out alongside your band of brothers or lead an individual scoreboard.The outcome is determined by your skill and your strategy. Critical Ops has no in-app purchases that give a competitive advantage. We guarantee a fair-to-play experience.",
+                ratingText: "1.0",
+                logo: "criticalOpsLogo",
+                bannerImage: "criticalOpsBanner",
+                ratingImage: "oneRating",
+                screenshot1: "criticalOps1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "MORTAL KOMBAT",
+                price: "IDR 104.000",
+                minimumAge: "18+",
+                size: "1.3 GB",
+                category: "Action",
+                description: "Experience the over-the-top, visceral fighting action of MORTAL KOMBAT! Bring the power of next-gen gaming to your mobile and tablet device with this visually stunning fighting and card collection game. Assemble an elite team of Mortal Kombat warriors and prove yourself in the greatest fighting tournament on Earth! Create your own team of Mortal Kombat fighters and lead them into battle to earn experience, new special attacks, and powerful artifacts.",
+                ratingText: "5.0",
+                logo: "mortalKombatLogo",
+                bannerImage: "mortalKombatBanner",
+                ratingImage: "fiveRating",
+                screenshot1: "mortalKombat1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Genshin Impact",
+                price: "IDR 79.000",
+                minimumAge: "12+",
+                size: "783 MB",
+                category: "Adventure",
+                description: "Step into Teyvat, a vast world teeming with life and flowing with elemental energy. You and your sibling arrived here from another world. Separated by an unknown god, stripped of your powers, and cast into a deep slumber, you now awake to a world very different from when you first arrived. Thus begins your journey across Teyvat to seek answers from The Seven — the gods of each element. Along the way, prepare to explore every inch of this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds...",
+                ratingText: "5.0",
+                logo: "genshinLogo",
+                bannerImage: "genshinBanner",
+                ratingImage: "fiveRating",
+                screenshot1: "genshin1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Minecraft",
+                price: "IDR 227.000",
+                minimumAge: "7+",
+                size: "884 MB",
+                category: "Adventure",
+                description: "Minecraft is a game made from blocks that you can transform into whatever you can imagine. Play in Creative mode with unlimited resources, or hunt for tools to fend off danger in Survival mode. With seamless cross-platform play on Minecraft: Bedrock Edition you can adventure solo or with friends, and discover an infinite, randomly generated world filled with blocks to mine, biomes to explore and mobs to befriend (or fight). The choice is yours in Minecraft – so play your way!",
+                ratingText: "5.0",
+                logo: "minecraftLogo",
+                bannerImage: "minecraftBanner",
+                ratingImage: "fiveRating",
+                screenshot1: "minecraft1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Limbo",
+                price: "IDR 6.000",
+                minimumAge: "16+",
+                size: "122 MB",
+                category: "Adventure",
+                description: "Limbo is an award-winning indie adventure, critically acclaimed for its captivating puzzle design and immersive sound and visuals. Its dark, misty spaces and haunting narrative will stay with you forever.Limbo is as close to perfect at what it does as a game can get.Limbo is genius. Freaky, weird genius. Disturbing, uncomfortable genius.",
+                ratingText: "4.0",
+                logo: "limboLogo",
+                bannerImage: "limboBanner",
+                ratingImage: "fourRating",
+                screenshot1: "limbo1",
+                screenshot2: "",
+                screenshot3: ""
+            ),
+            
+            GameInfo(
+                name: "Lara Croft GO",
+                price: "IDR 88.000",
+                minimumAge: "7+",
+                size: "1.3 GB",
+                category: "Adventure",
+                description: "Lara Croft GO is a turn based puzzle-adventure set in a long-forgotten world. Explore the ruins of an ancient civilization, discover well-kept secrets and face deadly challenges as you uncover the myth of the Queen of Venom. Experience lush visuals and a captivating soundtrack. Fight menacing enemies, overcome dangerous obstacles and escape deadly traps",
+                ratingText: "4.0",
+                logo: "laraLogo",
+                bannerImage: "laraBanner",
+                ratingImage: "fourRating",
+                screenshot1: "lara1",
+                screenshot2: "",
+                screenshot3: ""
             )
         ]
 
