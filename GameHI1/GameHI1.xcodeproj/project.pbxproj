@@ -145,7 +145,6 @@
 				04CE2EEF2B30839800E618C0 /* AdminViewController.swift */,
 				04CE2EF52B30BEBD00E618C0 /* AdminListViewController.swift */,
 				4B72ADB92B3147C000EA71F5 /* AdminEditGameViewController.swift */,
-				4B72ADBB2B316BF900EA71F5 /* GameDataManager.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +152,7 @@
 		4B2922812B30923D00565386 /* DataProccess */ = {
 			isa = PBXGroup;
 			children = (
+				4B72ADBB2B316BF900EA71F5 /* GameDataManager.swift */,
 				04C15D752B317C270066EB32 /* CartDatas+CoreDataClass.swift */,
 				04C15D762B317C270066EB32 /* CartDatas+CoreDataProperties.swift */,
 				04AFC8E12B304B4A007706C7 /* GameDatas+CoreDataClass.swift */,

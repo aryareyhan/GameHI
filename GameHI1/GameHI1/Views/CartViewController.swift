@@ -129,15 +129,46 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    @IBAction func checkoutButtonOnClick(_ sender: Any) {
+    private func showAlertWithCompletion(message: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            completion()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+
+    
+    private func performClearCart() {
         guard let loggedInUsername = HomeViewController.loggedInUsername else {
             // Handle the case where the username is nil
             return
         }
-        GameDataManager.shared.clearCartData(forUsername: loggedInUsername)
-        fetchCartData()
-        
-        showAlert(message: "Your transaction is confirmed. Enjoy!", title: "Transaction Successful")
-        print("Cart emptied")
+
+        let fetchRequest: NSFetchRequest<CartDatas> = CartDatas.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "username == %@", loggedInUsername)
+
+        do {
+            let cartItems = try context.fetch(fetchRequest)
+
+            for cartItem in cartItems {
+                context.delete(cartItem)
+            }
+
+            try context.save()
+
+            // Cart cleared successfully, notify the user
+            showAlertWithCompletion(message: "Cart cleared successfully!") { [weak self] in
+                // Dismiss the cart view controller
+                self?.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
+        } catch {
+            print("Error clearing cart: \(error)")
+        }
     }
+
+    @IBAction func checkoutButtonOnClick(_ sender: Any) {
+        // Call the function to clear the cart
+        performClearCart()
+    }
+
 }

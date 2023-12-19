@@ -83,11 +83,11 @@ class AdminViewController: UIViewController {
         newGameData.size = size
         newGameData.category = category
         newGameData.gameDescription = description
-        newGameData.logo = logo
-        newGameData.bannerImage = banner
+        newGameData.logo = "defaultLogo"
+        newGameData.bannerImage = "defaultBanner"
         newGameData.ratingText = rating
-        newGameData.ratingImage = "oneRating"
-        newGameData.screenshot1 = ss1
+        newGameData.ratingImage = "fiveRating"
+        newGameData.screenshot1 = "defaultBanner"
         newGameData.screenshot2 = ss2
         newGameData.screenshot3 = ss3
 
