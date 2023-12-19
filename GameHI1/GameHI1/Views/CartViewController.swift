@@ -70,6 +70,12 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         totalPriceLabel.text = "Total Price: IDR \(formattedTotalPrice)"
     }
     
+    func showAlert(message: String, title: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cartData.count
     }
