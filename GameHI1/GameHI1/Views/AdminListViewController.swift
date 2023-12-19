@@ -33,6 +33,12 @@ class AdminListViewController: UIViewController , UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "AdminEditGameViewController") as? AdminEditGameViewController {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

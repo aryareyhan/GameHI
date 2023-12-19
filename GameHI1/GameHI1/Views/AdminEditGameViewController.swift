@@ -8,22 +8,18 @@
 import UIKit
 
 class AdminEditGameViewController: UIViewController {
-
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var priceTF: UITextField!
+    @IBOutlet weak var ratingTF: UITextField!
+    @IBOutlet weak var ageTF: UITextField!
+    @IBOutlet weak var sizeTF: UITextField!
+    @IBOutlet weak var descriptionTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

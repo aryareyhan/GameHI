@@ -108,7 +108,7 @@
                         <outlet property="passwordTextField" destination="Fbq-lV-jUr" id="oaJ-50-Kbi"/>
                         <outlet property="usernameTextField" destination="9fJ-Ho-ItW" id="WE9-qj-VQq"/>
                         <segue destination="sBm-mG-gEE" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Fgx-MI-R3b"/>
-                        <segue destination="eGw-t1-ZvQ" kind="presentation" identifier="adminSegue" modalPresentationStyle="fullScreen" id="hWo-Gc-ZGp"/>
+                        <segue destination="79h-cT-XKM" kind="presentation" identifier="adminSegue" modalPresentationStyle="fullScreen" id="hWo-Gc-ZGp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -685,7 +685,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-gS-GWT">
-                                <rect key="frame" x="16" y="16" width="361" height="554.66666666666663"/>
+                                <rect key="frame" x="16" y="60" width="361" height="554.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-w8-YNn">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="39.666666666666664"/>
@@ -700,7 +700,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-l1-emx">
-                                        <rect key="frame" x="0.0" y="95.666666666666671" width="361" height="34.000000000000014"/>
+                                        <rect key="frame" x="0.0" y="95.666666666666657" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LH5-MZ-vDg">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -742,7 +742,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="47y-Cl-wuG">
-                                        <rect key="frame" x="0.0" y="201.66666666666666" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="201.66666666666669" width="361" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRy-ZS-hAf">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
@@ -844,7 +844,7 @@
                                             <color key="baseBackgroundColor" name="AccentColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="Ktd-cI-DEZ" kind="presentation" id="su7-dI-6pO"/>
+                                            <segue destination="tUT-YG-lsI" kind="presentation" id="su7-dI-6pO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPY-Bs-gDY">
@@ -870,6 +870,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cLx-wJ-Vqf"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bannerTF" destination="gDS-Sh-MJp" id="aWD-cc-Um4"/>
@@ -888,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu2-la-g09" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.6412213740459" y="757.74647887323943"/>
+            <point key="canvasLocation" x="3263.3587786259541" y="757.74647887323943"/>
         </scene>
         <!--Admin List View Controller-->
         <scene sceneID="gmG-uJ-gab">
@@ -899,7 +900,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-eX-Uxa">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="adminListCell" rowHeight="98" id="tq7-qZ-yll" customClass="AdminTableViewCell" customModule="GameHI1" customModuleProvider="target">
@@ -965,13 +966,14 @@
                             <constraint firstItem="ypO-eX-Uxa" firstAttribute="trailing" secondItem="aef-t7-Xs8" secondAttribute="trailing" id="pZi-Oy-3yE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jJG-QD-ohE"/>
                     <connections>
                         <outlet property="adminListTableView" destination="ypO-eX-Uxa" id="Kd4-DC-R4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEU-cN-UQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3096.9465648854962" y="757.74647887323943"/>
+            <point key="canvasLocation" x="4950.3816793893129" y="757.74647887323943"/>
         </scene>
         <!--List Games View Controller-->
         <scene sceneID="kzH-Tf-rEd">
@@ -1237,10 +1239,55 @@
                             <constraint firstItem="rQQ-vW-3Wq" firstAttribute="trailing" secondItem="dK4-1i-dup" secondAttribute="trailing" constant="16" id="gBJ-0V-s0D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageTF" destination="QxC-iK-o3K" id="XIF-hD-0sT"/>
+                        <outlet property="descriptionTF" destination="QNS-3Z-ncQ" id="W3o-Jl-f48"/>
+                        <outlet property="logoImageView" destination="gHt-ev-4tW" id="dVD-EY-uZy"/>
+                        <outlet property="priceTF" destination="fXW-r6-wrM" id="VKr-8d-I5k"/>
+                        <outlet property="ratingTF" destination="wa2-Le-223" id="i6P-gm-cYx"/>
+                        <outlet property="sizeTF" destination="54U-Jy-e9w" id="nbz-HM-zGV"/>
+                        <outlet property="titleTF" destination="D46-4U-0Cd" id="bji-M9-lYj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNH-59-Qr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3893.8931297709923" y="757.74647887323943"/>
+            <point key="canvasLocation" x="5747.3282442748086" y="757.74647887323943"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XG5-7d-1I0">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHR-4N-cP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="79h-cT-XKM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sRG-0W-cAR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eGw-t1-ZvQ" kind="relationship" relationship="rootViewController" id="wRD-7F-Nik"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2336.6412213740459" y="757.74647887323943"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FuB-Nd-UL7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tUT-YG-lsI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Tm-hv-8oU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ktd-cI-DEZ" kind="relationship" relationship="rootViewController" id="m1g-zK-NRP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUZ-vC-hRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4023.6641221374043" y="757.74647887323943"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
