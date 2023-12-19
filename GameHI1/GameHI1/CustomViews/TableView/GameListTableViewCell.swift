@@ -11,6 +11,7 @@ class GameListTableViewCell: UITableViewCell {
 
     static let identifier = "GameListTableViewCell"
     
+    @IBOutlet weak var gameThumbnailImageView: UIImageView!
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -19,6 +20,7 @@ class GameListTableViewCell: UITableViewCell {
     
     
     func setup(game: Game){
+        gameThumbnailImageView.image = UIImage(named: game.screenshot1)
         gameImageView.image = UIImage(named: game.logo)
         ageLabel.text = "Age \(game.minimumAge)"
         categoryLabel.text = game.category

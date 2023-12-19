@@ -312,54 +312,6 @@ class GameDataManager {
             ),
             
             GameInfo(
-                name: "Modern Combat 5",
-                price: "IDR 26.000",
-                minimumAge: "17+",
-                size: "1.1 GB",
-                category: "Action",
-                description: "Step onto the battlefield and answer the call in the classic title that raised the bar for first person shooter games with its great graphics, high-powered guns, and intense online multiplayer action. Modern Combat is the original mobile FPS where you can choose from more than 10 classes. Jump online for a bit of instant warfare. Fulfill your duty in the thrilling campaign as you shoot your way through one dire situation after another to save the world.",
-                ratingText: "2.0",
-                logo: "modernCombatLogo",
-                bannerImage: "modernCombatBanner",
-                ratingImage: "twoRating",
-                screenshot1: "modernCombat1",
-                screenshot2: "",
-                screenshot3: ""
-            ),
-            
-            GameInfo(
-                name: "Bullet Force",
-                price: "IDR 92.000",
-                minimumAge: "16+",
-                size: "469 MB",
-                category: "Action",
-                description: "Best FPS on android, play online or offline first-person shooter with lots of weapons customizations and arenas. Bullet Force is a fast action 3d shooting game. Download this new FPS now! FPS PVP Multiplayer Action Fight alongside your teammates in massive 20-player war using a variety of iconic weapons. Be ready to kill all your enemies in this survival game. Weapons Customization with over 20 weapons, 30 weapon camouflages, multiple optics, laser sights, and barrel attachments the possibilities are virtually endless.",
-                ratingText: "3.0",
-                logo: "bulletForceLogo",
-                bannerImage: "bulletForceBanner",
-                ratingImage: "threeRating",
-                screenshot1: "bulletForce1",
-                screenshot2: "",
-                screenshot3: ""
-            ),
-            
-            GameInfo(
-                name: "Critical Ops",
-                price: "IDR 11.000",
-                minimumAge: "16+",
-                size: "737 MB",
-                category: "Action",
-                description: "Critical Ops is a first-person shooter that features competitive combat through beautifully crafted maps and challenging game modes. Battle it out alongside your band of brothers or lead an individual scoreboard.The outcome is determined by your skill and your strategy. Critical Ops has no in-app purchases that give a competitive advantage. We guarantee a fair-to-play experience.",
-                ratingText: "1.0",
-                logo: "criticalOpsLogo",
-                bannerImage: "criticalOpsBanner",
-                ratingImage: "oneRating",
-                screenshot1: "criticalOps1",
-                screenshot2: "",
-                screenshot3: ""
-            ),
-            
-            GameInfo(
                 name: "MORTAL KOMBAT",
                 price: "IDR 104.000",
                 minimumAge: "18+",

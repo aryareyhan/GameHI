@@ -9,6 +9,7 @@ import UIKit
 
 class TopGrossingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var gameThumbnailImageView: UIImageView!
     @IBOutlet weak var gameCategoryLabel: UILabel!
     @IBOutlet weak var minimumAgeLabel: UILabel!
     @IBOutlet weak var gamePriceLabel: UILabel!
@@ -27,6 +28,7 @@ class TopGrossingTableViewCell: UITableViewCell {
     }
     
     func setup(game: Game){
+        gameThumbnailImageView.image = UIImage(named: game.screenshot1)
         gameCategoryLabel.text = game.category
         gamePriceLabel.text = game.price
         gameTitleLabel.text = game.name

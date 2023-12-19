@@ -95,7 +95,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 265
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
