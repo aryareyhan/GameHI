@@ -1175,8 +1175,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dK4-1i-dup">
-                                <rect key="frame" x="16" y="74.999999999999972" width="361" height="385.33333333333326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dK4-1i-dup">
+                                <rect key="frame" x="16" y="75" width="361" height="551.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSH-eQ-EdT">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="30"/>
@@ -1208,7 +1208,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXW-r6-wrM">
-                                                        <rect key="frame" x="0.0" y="37.666666666666657" width="280" height="27.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="37.666666666666671" width="280" height="27.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1235,13 +1235,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNS-3Z-ncQ">
-                                        <rect key="frame" x="0.0" y="297" width="361" height="34"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="orf-A7-Olc">
+                                        <rect key="frame" x="0.0" y="297" width="361" height="200"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="361" id="0s9-Rn-I5L"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pFn-uI-AHO">
-                                        <rect key="frame" x="0.0" y="351" width="361" height="34.333333333333314"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pFn-uI-AHO">
+                                        <rect key="frame" x="0.0" y="517" width="361" height="34.333333333333371"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoP-if-MTI">
                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="34.333333333333336"/>
@@ -1261,6 +1272,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="JTf-51-BOh"/>
                                     <constraint firstItem="OAR-T8-Waz" firstAttribute="top" secondItem="mSH-eQ-EdT" secondAttribute="bottom" constant="20" id="cEb-vk-fiD"/>
                                 </constraints>
                             </stackView>
@@ -1268,14 +1280,14 @@
                         <viewLayoutGuide key="safeArea" id="rQQ-vW-3Wq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dK4-1i-dup" firstAttribute="top" secondItem="rQQ-vW-3Wq" secondAttribute="top" constant="16" id="MQA-NV-1N3"/>
                             <constraint firstItem="dK4-1i-dup" firstAttribute="leading" secondItem="rQQ-vW-3Wq" secondAttribute="leading" constant="16" id="Tjd-NB-LgN"/>
                             <constraint firstItem="rQQ-vW-3Wq" firstAttribute="trailing" secondItem="dK4-1i-dup" secondAttribute="trailing" constant="16" id="gBJ-0V-s0D"/>
+                            <constraint firstItem="dK4-1i-dup" firstAttribute="top" secondItem="rQQ-vW-3Wq" secondAttribute="top" constant="16" id="lhU-Xf-kZ3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ageTF" destination="QxC-iK-o3K" id="XIF-hD-0sT"/>
-                        <outlet property="descriptionTF" destination="QNS-3Z-ncQ" id="W3o-Jl-f48"/>
+                        <outlet property="descriptionTV" destination="orf-A7-Olc" id="z9R-52-Mk3"/>
                         <outlet property="logoImageView" destination="gHt-ev-4tW" id="dVD-EY-uZy"/>
                         <outlet property="priceTF" destination="fXW-r6-wrM" id="VKr-8d-I5k"/>
                         <outlet property="ratingTF" destination="wa2-Le-223" id="i6P-gm-cYx"/>
@@ -1342,6 +1354,9 @@
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

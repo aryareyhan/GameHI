@@ -17,11 +17,17 @@ class AdminEditGameViewController: UIViewController {
     @IBOutlet weak var ratingTF: UITextField!
     @IBOutlet weak var ageTF: UITextField!
     @IBOutlet weak var sizeTF: UITextField!
-    @IBOutlet weak var descriptionTF: UITextField!
+    @IBOutlet weak var descriptionTV: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Text View Customizations
+        descriptionTV.layer.borderWidth = 1.0
+        descriptionTV.layer.borderColor = UIColor.systemGray5.cgColor
+        descriptionTV.isScrollEnabled = false
+        descriptionTV.textContainer.lineBreakMode = .byWordWrapping
+        
         populateView()
     }
     
@@ -32,7 +38,7 @@ class AdminEditGameViewController: UIViewController {
         ratingTF.text = game.ratingText
         ageTF.text = game.minimumAge
         sizeTF.text = game.size
-        descriptionTF.text = game.description
+        descriptionTV.text = game.description
     }
 
 }
