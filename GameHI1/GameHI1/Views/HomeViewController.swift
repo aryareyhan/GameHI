@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         do {
             let allGamesDatas = try context.fetch(fetchRequest)
 
-            guard allGamesDatas.count >= 5 else {
+            guard allGamesDatas.count >= 10 else {
                 print("Not enough games in Core Data.")
                 return
             }
@@ -43,7 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let shuffledGamesDatas = allGamesDatas.shuffled()
 
             // Take the first 5 games from the shuffled array and convert to Game
-            topGrossingGames = shuffledGamesDatas.prefix(5).map { Game(gameDatas: $0) }
+            topGrossingGames = shuffledGamesDatas.prefix(10).map { Game(gameDatas: $0) }
 
             // Reload the table view to display the new data
             topGrossingTableView.reloadData()

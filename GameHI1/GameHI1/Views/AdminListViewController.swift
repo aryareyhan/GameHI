@@ -20,6 +20,10 @@ class AdminListViewController: UIViewController , UITableViewDelegate, UITableVi
         return gamesData.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let gameItem = gamesData[indexPath.row]
         let cell = adminListTableView.dequeueReusableCell(withIdentifier: "adminListCell", for: indexPath) as! AdminTableViewCell
