@@ -129,8 +129,8 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    private func showAlertWithCompletion(message: String, completion: @escaping () -> Void) {
-        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+    private func showAlertWithCompletion(title:String, message: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Checkout Success!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             completion()
         }))
@@ -149,6 +149,14 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
         do {
             let cartItems = try context.fetch(fetchRequest)
+            
+            if (cartItems.count == 0) {
+                showAlertWithCompletion(title:"Empty Cart Warning!", message: "Your cart is empty! Add items before checking out. Happy shopping!") { [weak self] in
+                    // Dismiss the cart view controller
+                    self?.presentingViewController?.dismiss(animated: true, completion: nil)
+                }
+                return
+            }
 
             for cartItem in cartItems {
                 context.delete(cartItem)
@@ -157,7 +165,7 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
             try context.save()
 
             // Cart cleared successfully, notify the user
-            showAlertWithCompletion(message: "Cart cleared successfully!") { [weak self] in
+            showAlertWithCompletion(title:  "Empty Cart Warning" ,message: "Order placed successfully. Enjoy!") { [weak self] in
                 // Dismiss the cart view controller
                 self?.presentingViewController?.dismiss(animated: true, completion: nil)
             }

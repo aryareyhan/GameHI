@@ -51,7 +51,7 @@ class GameDetailViewController: UIViewController {
     private func saveToCart() {
         // Check if the item is already in the cart for the logged-in user
         if isItemAlreadyInCart() {
-            showAlert(message: "Item is already in the cart.", title: "Failed")
+            showAlert(message: "Oops! This item is in your cart. Check out now!", title: "Already in Cart")
             print("Item is already in the cart.")
             return
         }
@@ -72,7 +72,7 @@ class GameDetailViewController: UIViewController {
         // Save the context to persist the changes
         do {
             try context.save()
-            showAlert(message: "Item added to cart.", title: "Success")
+            showAlert(message: "Added to cart. Continue shopping or checkout.", title: "Item Added!")
             print("Item added to cart.")
         } catch {
             print("Error saving to cart: \(error)")
