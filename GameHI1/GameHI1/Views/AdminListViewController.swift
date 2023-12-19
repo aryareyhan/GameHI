@@ -35,6 +35,9 @@ class AdminListViewController: UIViewController , UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let controller = storyboard?.instantiateViewController(withIdentifier: "AdminEditGameViewController") as? AdminEditGameViewController {
+            
+            controller.game = gamesData[indexPath.row]
+            
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
@@ -67,17 +70,5 @@ class AdminListViewController: UIViewController , UITableViewDelegate, UITableVi
             print("Error fetching games from Core Data: \(error)")
         }
     }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

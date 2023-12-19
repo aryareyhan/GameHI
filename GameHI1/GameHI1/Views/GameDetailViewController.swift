@@ -33,7 +33,7 @@ class GameDetailViewController: UIViewController {
     
     private func populateView(){
         screenshotImageView.image = UIImage(named: game.screenshot1)
-    bannerImageView.image = UIImage(named: game.bannerImage)
+        bannerImageView.image = UIImage(named: game.bannerImage)
         logoImageView.image = UIImage(named: game.logo)
         titleLabel.text = game.name
         ratingLabel.text = game.ratingText

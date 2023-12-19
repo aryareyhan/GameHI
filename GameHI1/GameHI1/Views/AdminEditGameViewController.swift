@@ -8,6 +8,9 @@
 import UIKit
 
 class AdminEditGameViewController: UIViewController {
+    
+    var game: Game!
+    
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var priceTF: UITextField!
@@ -19,7 +22,17 @@ class AdminEditGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        populateView()
+    }
+    
+    private func populateView(){
+        logoImageView.image = UIImage(named: game.logo)
+        titleTF.text = game.name
+        priceTF.text = game.price
+        ratingTF.text = game.ratingText
+        ageTF.text = game.minimumAge
+        sizeTF.text = game.size
+        descriptionTF.text = game.description
     }
 
 }
