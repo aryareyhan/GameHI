@@ -42,6 +42,11 @@ class AdminListViewController: UIViewController , UITableViewDelegate, UITableVi
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        fetchAllGames()
+        adminListTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +54,6 @@ class AdminListViewController: UIViewController , UITableViewDelegate, UITableVi
         adminListTableView.delegate = self
         
         fetchAllGames()
-        
         adminListTableView.reloadData()
 
         // Do any additional setup after loading the view.
