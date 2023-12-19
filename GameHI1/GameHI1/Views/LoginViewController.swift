@@ -34,9 +34,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GameDataManager.shared.saveGamesIfNeeded()
+//        GameDataManager.shared.saveGamesIfNeeded()
 //        GameDataManager.shared.clearGameData()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func loginButtonOnClick(_ sender: Any) {

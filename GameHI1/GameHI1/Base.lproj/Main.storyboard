@@ -689,7 +689,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-gS-GWT">
-                                <rect key="frame" x="16" y="60" width="361" height="554.66666666666663"/>
+                                <rect key="frame" x="16" y="60" width="361" height="608"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-w8-YNn">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="39.666666666666664"/>
@@ -843,16 +843,36 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-wl-ypk">
                                         <rect key="frame" x="0.0" y="467" width="361" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="View All Games">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="View All Games">
                                             <color key="baseBackgroundColor" name="AccentColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="tUT-YG-lsI" kind="presentation" id="su7-dI-6pO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPY-Bs-gDY">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BD7-af-oMa">
                                         <rect key="frame" x="0.0" y="520.33333333333337" width="361" height="34.333333333333371"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tap-ir-AMa">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Fetch All Games"/>
+                                                <connections>
+                                                    <action selector="fetchGameOnClicked:" destination="eGw-t1-ZvQ" eventType="touchUpInside" id="4uN-ZE-R7r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SX-YO-j61">
+                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Delete All Games"/>
+                                                <connections>
+                                                    <action selector="deleteGameOnClicked:" destination="eGw-t1-ZvQ" eventType="touchUpInside" id="Dln-IW-BQD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPY-Bs-gDY">
+                                        <rect key="frame" x="0.0" y="573.66666666666663" width="361" height="34.333333333333371"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Logout">

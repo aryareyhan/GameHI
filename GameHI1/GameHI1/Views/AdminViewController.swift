@@ -32,6 +32,16 @@ class AdminViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func deleteGameOnClicked(_ sender: Any) {
+        GameDataManager.shared.clearGameData()
+        showAlert(message: "All games deleted from database.", title: "Success")
+    }
+    
+    @IBAction func fetchGameOnClicked(_ sender: Any) {
+        GameDataManager.shared.saveGamesIfNeeded()
+        showAlert(message: "All games fetched from database.", title: "Success")
+    }
+    
     @IBAction func addGameOnClicked(_ sender: Any) {
         saveNewGame()
         print("Test")
@@ -54,14 +64,14 @@ class AdminViewController: UIViewController {
             let ss3 = ss3TF.text, !ss3.isEmpty
         else {
             // Show an alert for empty fields
-            showAlert(message: "Please fill in all fields.")
+            showAlert(message: "Please fill in all fields.", title: "Error")
             return
         }
 
         // Check if a game with the same title already exists
         if gameWithTitleExists(title: title) {
             // Show an alert that a game with the same title already exists
-            showAlert(message: "A game with the same title already exists.")
+            showAlert(message: "A game with the same title already exists.", title: "Error")
             return
         }
 
@@ -87,7 +97,7 @@ class AdminViewController: UIViewController {
             print("New game saved successfully!")
 
             // Show a success alert
-            showAlert(message: "New game added")
+            showAlert(message: "New game added", title: "Success")
 
             // Clear the text fields
             clearTextFields()
@@ -110,8 +120,8 @@ class AdminViewController: UIViewController {
     }
 
     
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+    func showAlert(message: String, title: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
