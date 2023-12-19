@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  GameHI1
 //
-//  Created by Matthew Anderson on 07/12/23.
+//  Created by Arya Reyhan on 07/12/23.
 //
 
 import UIKit

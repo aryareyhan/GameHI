@@ -2,7 +2,7 @@
 //  GameDatas+CoreDataClass.swift
 //  GameHI1
 //
-//  Created by Matthew Anderson on 18/12/23.
+//  Created by Arya Reyhan on 18/12/23.
 //
 //
 
