@@ -1290,6 +1290,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Update">
                                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="updateButtonOnClick:" destination="JAh-dc-FPU" eventType="touchUpInside" id="Mao-Yq-0Qv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

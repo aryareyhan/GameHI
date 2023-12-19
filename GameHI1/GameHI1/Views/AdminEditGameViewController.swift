@@ -48,63 +48,110 @@ class AdminEditGameViewController: UIViewController {
             deleteGame()
         }
         
-        private func deleteGame() {
-            let confirmationAlert = UIAlertController(
-                title: "Confirmation",
-                message: "Are you sure you want to delete this game?",
-                preferredStyle: .alert
-            )
+    private func deleteGame() {
+        let confirmationAlert = UIAlertController(
+            title: "Confirmation",
+            message: "Are you sure you want to delete this game?",
+            preferredStyle: .alert
+        )
 
-            confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-                // Perform the delete operation
-                self?.performDelete()
-            }))
+        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
+            // Perform the delete operation
+            self?.performDelete()
+        }))
 
-            present(confirmationAlert, animated: true, completion: nil)
-        }
+        present(confirmationAlert, animated: true, completion: nil)
+    }
 
-        private func performDelete() {
-            let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "name == %@", game.name)
+    private func performDelete() {
+        let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", game.name)
 
-            do {
-                let games = try context.fetch(fetchRequest)
+        do {
+            let games = try context.fetch(fetchRequest)
 
-                if let gameToDelete = games.first {
-                    context.delete(gameToDelete)
-                    try context.save()
+            if let gameToDelete = games.first {
+                context.delete(gameToDelete)
+                try context.save()
 
-                    // Game deleted successfully, notify the user
-                    showAlertWithCompletion(message: "Game deleted successfully!") { [weak self] in
-                        // Navigate back to the previous view controller
-                        self?.navigationController?.popViewController(animated: true)
-                    }
+                // Game deleted successfully, notify the user
+                showAlertWithCompletion(message: "Game deleted successfully!") { [weak self] in
+                    // Navigate back to the previous view controller
+                    self?.navigationController?.popViewController(animated: true)
                 }
-            } catch {
-                print("Error deleting game: \(error)")
             }
+        } catch {
+            print("Error deleting game: \(error)")
+        }
+    }
+
+    private func showAlertWithCompletion(message: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            completion()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(
+            title: "Success",
+            message: message,
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func updateButtonOnClick(_ sender: Any) {
+        updateGame()
+    }
+
+    private func updateGame() {
+        // Check for empty fields
+        guard
+            let title = titleTF.text, !title.isEmpty,
+            let price = priceTF.text, !price.isEmpty,
+            let rating = ratingTF.text, !rating.isEmpty,
+            let age = ageTF.text, !age.isEmpty,
+            let size = sizeTF.text, !size.isEmpty,
+            let description = descriptionTV.text, !description.isEmpty
+        else {
+            // Show an alert for empty fields
+            showAlert(message: "Please fill in all fields.")
+            return
         }
 
-        private func showAlertWithCompletion(message: String, completion: @escaping () -> Void) {
-            let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                completion()
-            }))
-            present(alert, animated: true, completion: nil)
+        // Fetch the game to be updated
+        let fetchRequest: NSFetchRequest<GameDatas> = GameDatas.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", game.name)
+
+        do {
+            let games = try context.fetch(fetchRequest)
+
+            if let gameToUpdate = games.first {
+                // Update the game properties with the values from the text fields and text view
+                gameToUpdate.name = title
+                gameToUpdate.price = price
+                gameToUpdate.ratingText = rating
+                gameToUpdate.minimumAge = age
+                gameToUpdate.size = size
+                gameToUpdate.gameDescription = description
+
+                // Save the context to persist the changes
+                try context.save()
+
+                // Game updated successfully, notify the user
+                showAlertWithCompletion(message: "Game updated successfully!") { [weak self] in
+                    // Navigate back to the previous view controller
+                    self?.navigationController?.popViewController(animated: true)
+                }
+            }
+        } catch {
+            print("Error updating game: \(error)")
         }
-
-
-
-        private func showAlert(message: String) {
-            let alert = UIAlertController(
-                title: "Success",
-                message: message,
-                preferredStyle: .alert
-            )
-
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
+    }
 
 }
