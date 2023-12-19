@@ -64,6 +64,7 @@ class GameDetailViewController: UIViewController {
         cartData.title = game.name
         cartData.price = game.price
         cartData.logo = game.logo
+        cartData.size = game.size
 
         // Assuming 'loggedInUsername' is a static property in your HomeViewController
         cartData.username = HomeViewController.loggedInUsername

@@ -38,12 +38,13 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
             let cartDatas = try context.fetch(fetchRequest)
 
             // Convert CartDatas to CartItem
-            cartData = cartDatas.map { CartItem(title: $0.title ?? "", category: $0.category ?? "", price: $0.price ?? "", imageName: $0.logo ?? "") }
+            cartData = cartDatas.map { CartItem(title: $0.title ?? "", category: $0.category ?? "", price: $0.price ?? "", imageName: $0.logo ?? "", size: $0.size ?? "") }
 
             // Reload the table view to reflect the fetched data
             cartTableView.reloadData()
             
             updateTotalPriceLabel()
+            updateTotalSizeLabel()
         } catch {
             print("Error fetching cart data: \(error)")
         }
@@ -68,6 +69,39 @@ class CartViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let formattedTotalPrice = numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0"
 
         totalPriceLabel.text = "Total Price: IDR \(formattedTotalPrice)"
+    }
+    
+    func updateTotalSizeLabel() {
+        let totalSize = cartData.reduce(0.0) { total, cartItem in
+            // Extract the numeric value from the size string
+            let sizeString = cartItem.size
+            let sizeComponents = sizeString.components(separatedBy: " ")
+
+            if let sizeValue = Double(sizeComponents[0]), let unit = sizeComponents.last {
+                // Convert all sizes to MB
+                let sizeInMB: Double
+                switch unit {
+                case "GB":
+                    sizeInMB = sizeValue * 1024
+                case "MB":
+                    sizeInMB = sizeValue
+                default:
+                    sizeInMB = 0.0
+                }
+                return total + sizeInMB
+            } else {
+                return total
+            }
+        }
+
+        let formattedTotalSize = formatSize(totalSize)
+        totalSizeLabel.text = "Total Size: \(formattedTotalSize)"
+    }
+
+    // Format size to have two decimal places
+    private func formatSize(_ sizeInMB: Double) -> String {
+        let formattedSize = String(format: "%.2f", sizeInMB)
+        return "\(formattedSize) MB"
     }
     
     func showAlert(message: String, title: String) {

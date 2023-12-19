@@ -19,11 +19,11 @@
 		04BC427F2B21E5E400910166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BC427D2B21E5E400910166 /* LaunchScreen.storyboard */; };
 		04BC42882B21EAC000910166 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC42872B21EAC000910166 /* LoginViewController.swift */; };
 		04BC428C2B21FAD000910166 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC428B2B21FAD000910166 /* RegisterViewController.swift */; };
+		04C15D772B317C270066EB32 /* CartDatas+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C15D752B317C270066EB32 /* CartDatas+CoreDataClass.swift */; };
+		04C15D782B317C270066EB32 /* CartDatas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C15D762B317C270066EB32 /* CartDatas+CoreDataProperties.swift */; };
 		04CE2EE62B30730A00E618C0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EE52B30730A00E618C0 /* CartViewController.swift */; };
 		04CE2EE82B3074BE00E618C0 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EE72B3074BE00E618C0 /* CartTableViewCell.swift */; };
 		04CE2EEA2B3075B400E618C0 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EE92B3075B400E618C0 /* CartItem.swift */; };
-		04CE2EED2B30797D00E618C0 /* CartDatas+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EEB2B30797D00E618C0 /* CartDatas+CoreDataClass.swift */; };
-		04CE2EEE2B30797D00E618C0 /* CartDatas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EEC2B30797D00E618C0 /* CartDatas+CoreDataProperties.swift */; };
 		04CE2EF02B30839800E618C0 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EEF2B30839800E618C0 /* AdminViewController.swift */; };
 		04CE2EF42B30BEA400E618C0 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EF32B30BEA400E618C0 /* AdminTableViewCell.swift */; };
 		04CE2EF62B30BEBD00E618C0 /* AdminListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE2EF52B30BEBD00E618C0 /* AdminListViewController.swift */; };
@@ -60,11 +60,11 @@
 		04BC42802B21E5E400910166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BC42872B21EAC000910166 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04BC428B2B21FAD000910166 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		04C15D752B317C270066EB32 /* CartDatas+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartDatas+CoreDataClass.swift"; sourceTree = "<group>"; };
+		04C15D762B317C270066EB32 /* CartDatas+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartDatas+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04CE2EE52B30730A00E618C0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		04CE2EE72B3074BE00E618C0 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		04CE2EE92B3075B400E618C0 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
-		04CE2EEB2B30797D00E618C0 /* CartDatas+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartDatas+CoreDataClass.swift"; sourceTree = "<group>"; };
-		04CE2EEC2B30797D00E618C0 /* CartDatas+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartDatas+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04CE2EEF2B30839800E618C0 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		04CE2EF32B30BEA400E618C0 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
 		04CE2EF52B30BEBD00E618C0 /* AdminListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminListViewController.swift; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 		4B2922812B30923D00565386 /* DataProccess */ = {
 			isa = PBXGroup;
 			children = (
-				04CE2EEB2B30797D00E618C0 /* CartDatas+CoreDataClass.swift */,
-				04CE2EEC2B30797D00E618C0 /* CartDatas+CoreDataProperties.swift */,
+				04C15D752B317C270066EB32 /* CartDatas+CoreDataClass.swift */,
+				04C15D762B317C270066EB32 /* CartDatas+CoreDataProperties.swift */,
 				04AFC8E12B304B4A007706C7 /* GameDatas+CoreDataClass.swift */,
 				04AFC8E22B304B4A007706C7 /* GameDatas+CoreDataProperties.swift */,
 				04AFC8DB2B304452007706C7 /* UserDatas+CoreDataClass.swift */,
@@ -318,9 +318,10 @@
 				04CE2EEA2B3075B400E618C0 /* CartItem.swift in Sources */,
 				04CE2EF42B30BEA400E618C0 /* AdminTableViewCell.swift in Sources */,
 				04BC428C2B21FAD000910166 /* RegisterViewController.swift in Sources */,
-				04CE2EED2B30797D00E618C0 /* CartDatas+CoreDataClass.swift in Sources */,
+				04C15D782B317C270066EB32 /* CartDatas+CoreDataProperties.swift in Sources */,
 				4B7851622B2F60F600DA9AD8 /* UIViewController+Extensions.swift in Sources */,
 				4BF6C9602B2F37DE00535D39 /* Game.swift in Sources */,
+				04C15D772B317C270066EB32 /* CartDatas+CoreDataClass.swift in Sources */,
 				04BC42882B21EAC000910166 /* LoginViewController.swift in Sources */,
 				4B8110CA2B2EFD1E00266AE5 /* HomeViewController.swift in Sources */,
 				04CE2EE82B3074BE00E618C0 /* CartTableViewCell.swift in Sources */,
@@ -330,7 +331,6 @@
 				04AFC8E32B304B4A007706C7 /* GameDatas+CoreDataClass.swift in Sources */,
 				04CE2EE62B30730A00E618C0 /* CartViewController.swift in Sources */,
 				4BC6557F2B2FE992007C1B28 /* GameHI1.xcdatamodeld in Sources */,
-				04CE2EEE2B30797D00E618C0 /* CartDatas+CoreDataProperties.swift in Sources */,
 				4BF6C9622B2F3D5100535D39 /* TopGrossingTableViewCell.swift in Sources */,
 				4B78515D2B2F5E5500DA9AD8 /* GameDetailViewController.swift in Sources */,
 			);

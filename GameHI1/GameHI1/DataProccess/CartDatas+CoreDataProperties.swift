@@ -2,7 +2,7 @@
 //  CartDatas+CoreDataProperties.swift
 //  GameHI1
 //
-//  Created by Matthew Anderson on 18/12/23.
+//  Created by Matthew Anderson on 19/12/23.
 //
 //
 
@@ -17,10 +17,11 @@ extension CartDatas {
     }
 
     @NSManaged public var category: String?
-    @NSManaged public var title: String?
-    @NSManaged public var price: String?
     @NSManaged public var logo: String?
+    @NSManaged public var price: String?
+    @NSManaged public var title: String?
     @NSManaged public var username: String?
+    @NSManaged public var size: String?
 
 }
 

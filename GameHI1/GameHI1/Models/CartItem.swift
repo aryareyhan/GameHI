@@ -12,4 +12,5 @@ struct CartItem {
     let category: String
     let price: String
     let imageName: String
+    let size: String
 }
